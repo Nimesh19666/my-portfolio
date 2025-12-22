@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MoveRight } from "lucide-react";
+import Image from "next/image"; // Import Image component
 
 export default function Story() {
   const containerRef = useRef(null);
@@ -49,14 +50,16 @@ export default function Story() {
           </motion.div>
         </div>
 
+        {/* Replaced Background DIV with Next.js Image */}
         <div ref={imageRef} className="relative w-full h-[100vh]">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale contrast-125 opacity-80"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1900&auto=format&fit=crop')",
-            }}
+          <Image
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1900&auto=format&fit=crop"
+            alt="Nimesh working"
+            fill
+            className="object-cover grayscale contrast-125 opacity-80"
+            priority
           />
+
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-20"
             viewBox="0 0 1200 800"

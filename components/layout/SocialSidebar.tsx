@@ -1,4 +1,4 @@
-import { Github, Linkedin, MessageCircle } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function SocialSidebar() {
@@ -12,19 +12,21 @@ export default function SocialSidebar() {
       </div>
       <div className="flex flex-col gap-6 items-center">
         <Link
-          href="#"
+          href="https://www.linkedin.com/in/nimesh-gujari/"
+          target="_blank"
           className="text-text-muted hover:text-primary hover:-translate-y-1 transition-all duration-300"
         >
           <Linkedin size={22} />
         </Link>
         <Link
-          href="#"
+          href="mailto:gujarinimesh@gmail.com"
           className="text-text-muted hover:text-primary hover:-translate-y-1 transition-all duration-300"
         >
-          <MessageCircle size={22} />
+          <Mail size={22} />
         </Link>
         <Link
-          href="#"
+          href="https://github.com/Nimesh19666"
+          target="_blank"
           className="text-text-muted hover:text-primary hover:-translate-y-1 transition-all duration-300"
         >
           <Github size={22} />

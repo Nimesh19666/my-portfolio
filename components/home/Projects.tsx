@@ -5,37 +5,40 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     id: 1,
-    category: "Admin Dashboard",
-    title: "Enterprise MERN Panel",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-    desc: "React, Node.js, Redis, Docker, MongoDB. Features RBAC, Server-Side Pagination, and 40% reduced API latency.",
+    category: "FinTech Platform",
+    title: "Real-Time Stock Market",
+    img: "https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=1600&auto=format&fit=crop",
+    desc: "Built with Next.js 14, WebSockets, and PostgreSQL. Features sub-millisecond live price updates, OAuth via Better Auth, and background job processing with Inngest.",
   },
   {
     id: 2,
-    category: "FinTech",
-    title: "Live Stock Platform",
-    img: "https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=1600&auto=format&fit=crop",
-    desc: "Next.js 14, WebSockets, TypeScript. Sub-millisecond price updates with Better Auth and Inngest background jobs.",
+    category: "SaaS Product",
+    title: "Enterprise Admin Panel",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+    desc: "A production-ready MERN dashboard with Redis caching that reduced API latency by 40%. Implements strict RBAC and JWT authentication for secure data handling.",
   },
   {
     id: 3,
-    category: "Communication",
-    title: "Real-Time Chat App",
+    category: "Real-Time Communication",
+    title: "Scalable Chat App",
     img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1600&auto=format&fit=crop",
-    desc: "MERN, Socket.io, Redis Adapter. Scalable infrastructure supporting 1:1 and group messaging with optimistic UI.",
+    desc: "Engineered using Socket.io and Redis Adapter for horizontal scaling. Supports 1:1 and group messaging with Optimistic UI updates and Zustand state management.",
   },
   {
     id: 4,
-    category: "Deep Learning Research",
-    title: "AI Image Detection",
+    category: "Research Publication",
+    title: "AI Deepfake Detection",
     img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
-    desc: "Published in IJARSCT. DenseNet-121 & ResNet50 ensemble achieving 94% accuracy and 0.991 ROC-AUC.",
+    desc: "Published in IJARSCT. A DenseNet-121 & ResNet50 ensemble architecture achieving 94% accuracy and 0.991 ROC-AUC on synthetic image datasets.",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="bg-background px-6 md:px-20 py-24 border-t border-border">
+    <section
+      id="works"
+      className="bg-background px-6 md:px-20 py-24 border-t border-border"
+    >
       <div className="max-w-4xl mb-20">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -43,8 +46,8 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-medium text-white leading-tight"
         >
-          Discover my latest work and creative <br />
-          solutions that bring ideas to life
+          Selected Works & <br />
+          <span className="text-secondary">Technical Achievements</span>
         </motion.h2>
       </div>
 

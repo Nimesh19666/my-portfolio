@@ -1,16 +1,16 @@
-import Navbar from "@/components/home/Navbar";
-import Hero from "@/components/home/Hero";
-import SocialSidebar from "@/components/home/SocialSidebar";
-import RightNameSidebar from "@/components/home/RightNameSidebar";
-import CustomCursor from "@/components/home/CustomCursor";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import SocialSidebar from "@/components/layout/SocialSidebar";
+import RightNameSidebar from "@/components/layout/RightNameSidebar";
+import CustomCursor from "@/components/layout/CustomCursor";
 import About from "@/components/home/About";
 import Story from "@/components/home/Story";
 import Services from "@/components/home/Services";
 import Experience from "@/components/home/Experience";
 import Projects from "@/components/home/Projects";
 import CrossScroll from "@/components/home/CrossScroll";
-import Footer from "@/components/home/Footer";
-
+import Hero from "@/components/home/Hero";
+import Contact from "@/components/home/Contact"; // Imported Contact
 export default function Home() {
   return (
     // FIX: Changed 'bg-white' to 'bg-background' so the dark theme works
@@ -26,6 +26,7 @@ export default function Home() {
       <Experience />
       <CrossScroll />
       <Projects />
+      <Contact /> {/* Added Contact Section here */}
       <Footer />
     </main>
   );

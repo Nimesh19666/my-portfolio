@@ -68,7 +68,7 @@ const techData = [
 
 export default function TechArsenalSection() {
   return (
-    <section className="px-6 md:px-12 py-32 max-w-[1800px] mx-auto relative  mt-12">
+    <section className="px-6 md:px-12 py-32 max-w-[1800px] mx-auto relative mt-12">
       {/* Section Header */}
       <div className="text-center mb-24 space-y-4">
         <motion.h2
@@ -84,8 +84,8 @@ export default function TechArsenalSection() {
         </p>
       </div>
 
-      {/* Tech Grid - FORCED 3 COLUMNS */}
-      <div className="tech-grid gap-x-12 gap-y-20">
+      {/* Grid Layout using Tailwind */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-20 items-start">
         {techData.map((category, index) => (
           <motion.div
             key={index}
@@ -114,20 +114,6 @@ export default function TechArsenalSection() {
           </motion.div>
         ))}
       </div>
-
-      {/* MANUAL CSS OVERRIDE to guarantee 3 columns */}
-      <style jsx>{`
-        .tech-grid {
-          display: grid;
-          grid-template-columns: 1fr; /* Mobile: 1 Column */
-        }
-        @media (min-width: 768px) {
-          .tech-grid {
-            grid-template-columns: repeat(3, 1fr); /* Desktop: 3 Columns */
-            align-items: start;
-          }
-        }
-      `}</style>
     </section>
   );
 }

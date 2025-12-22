@@ -1,20 +1,35 @@
 "use client";
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { LayoutTemplate, Server, Zap, CloudCog } from "lucide-react"; // Updated icons
+import { LayoutTemplate, Server, Zap, CloudCog } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useLenis } from "lenis/react"; // Import Lenis Hook
 
 export default function Services() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
+  // Get Lenis instance
+  const lenis = useLenis();
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // SYNC LENIS WITH GSAP TO FIX JITTER
+    if (lenis) {
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    }
+
     if (!sectionRef.current || !cardsRef.current) return;
 
     const ctx = gsap.context(() => {
       const cards = cardsRef.current;
+      // Force non-null assertion since we checked above
       const totalScroll = cards!.scrollWidth - window.innerWidth;
 
       gsap.to(cards, {
@@ -33,15 +48,13 @@ export default function Services() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [lenis]); // Added dependency
 
-  // Content derived directly from your Resume
   const services = [
     {
       icon: LayoutTemplate,
       number: "01",
       title: "Frontend Architecture",
-      // Based on Kayana experience & Skills
       description:
         "Architecting scalable, pixel-perfect UIs using React.js, Next.js 14, and TailwindCSS. Expert in performance optimization (Lazy Loading, Code Splitting) and complex state management with Redux Toolkit & Zustand.",
     },
@@ -49,7 +62,6 @@ export default function Services() {
       icon: Zap,
       number: "02",
       title: "Real-Time Systems",
-      // Based on Stock Market & Chat App projects
       description:
         "Engineering sub-millisecond real-time applications using WebSockets and Socket.io. Experience building live financial platforms and scalable chat infrastructure with Redis adapters and Optimistic UI.",
     },
@@ -57,7 +69,6 @@ export default function Services() {
       icon: Server,
       number: "03",
       title: "Backend Engineering",
-      // Based on Enterprise Admin Dashboard & Skills
       description:
         "Developing robust RESTful and GraphQL APIs with Node.js and Express. Implementing secure authentication (JWT/OAuth), Role-Based Access Control (RBAC), and high-performance caching strategies using Redis.",
     },
@@ -65,7 +76,6 @@ export default function Services() {
       icon: CloudCog,
       number: "04",
       title: "Cloud & DevOps",
-      // Based on Acuradyne experience & Skills
       description:
         "Deploying full-stack applications on AWS (EC2, S3) with Nginx reverse proxies. Managing Docker containerization, CI/CD pipelines for zero-downtime updates, and optimizing PostgreSQL/MongoDB schemas.",
     },

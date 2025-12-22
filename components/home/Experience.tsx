@@ -8,21 +8,21 @@ const experiences = [
     company: "Kayana",
     role: "Frontend Developer",
     period: "Dec 2024 - Present",
-    desc: "Architecting a scalable Partner Admin Panel for 50+ restaurants using React.js and Redux Toolkit. Engineered a white-label Gym Management Platform with RBAC and boosted dashboard performance by 25% via code splitting.",
+    desc: "Architecting a scalable Partner Admin Panel for 50+ restaurants using React.js and Redux Toolkit. Engineered a white-label Gym Management Platform with RBAC and boosted dashboard performance by 25% via code splitting and memoization.",
   },
   {
     id: 2,
     company: "Acuradyne Sine (IIT Bombay)",
     role: "Software Developer Intern",
     period: "Jun 2024 - Oct 2024",
-    desc: "Developed FISYO Healthcare Dashboard using Dash/Python on AWS with 95% precision. Built Precorg Pulse Analysis for real-time cardiac visualization and deployed full-stack apps on AWS EC2.",
+    desc: "Developed FISYO Healthcare Dashboard using Dash/Python on AWS with 95% precision for patient data analysis. Deployed full-stack apps on AWS EC2 with Nginx reverse proxy and automated CI/CD pipelines for zero-downtime updates.",
   },
   {
     id: 3,
     company: "Google Developer Student Clubs",
     role: "Core Team Member",
     period: "Leadership",
-    desc: "Organized technical workshops and hackathons for 200+ students. Mentored peers in React and Node.js, fostering a strong community of developers and improving project output quality.",
+    desc: "Organized technical workshops and hackathons for 200+ students. Mentored peers in web development technologies (React, Node.js), significantly improving the club’s overall project output quality.",
   },
 ];
 

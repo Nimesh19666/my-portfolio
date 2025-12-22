@@ -25,8 +25,14 @@ export default function Navbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Works", href: "/#works" },
-    { label: "Contact", href: "#contact" },
+    { label: "Works", href: "/#works" }, // Updated Link
+    { label: "Contact", href: "/#contact" }, // Updated Link
+  ];
+
+  const socialLinks = [
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/nimesh-gujari/" },
+    { name: "GitHub", url: "https://github.com/Nimesh19666" },
+    { name: "Email", url: "mailto:gujarinimesh@gmail.com" },
   ];
 
   return (
@@ -66,7 +72,7 @@ export default function Navbar() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(true)}
-            className="fixed top-8 right-8 w-16 h-16 bg-surface/50 backdrop-blur-md rounded-full flex items-center justify-center z-50 hover:bg-primary hover:text-white text-white border border-border transition-colors duration-300 shadow-lg"
+            className="fixed top-8 right-8 w-16 h-16 bg-surface/50 backdrop-blur-md rounded-full flex items-center justify-center z-50 hover:bg-primary hover:text-white text-white border border-border transition-colors duration-300 shadow-lg cursor-pointer"
           >
             <Menu size={28} />
           </motion.button>
@@ -94,7 +100,7 @@ export default function Navbar() {
               <div className="flex justify-end">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 hover:rotate-90 transition-transform duration-300 text-white"
+                  className="p-2 hover:rotate-90 transition-transform duration-300 text-white cursor-pointer"
                 >
                   <X size={32} />
                 </button>
@@ -118,18 +124,17 @@ export default function Navbar() {
                   Socials
                 </h4>
                 <div className="flex gap-6 text-sm text-text-muted">
-                  <a href="#" className="hover:text-white transition">
-                    LinkedIn
-                  </a>
-                  <a href="#" className="hover:text-white transition">
-                    WhatsApp
-                  </a>
-                  <a href="#" className="hover:text-white transition">
-                    Email
-                  </a>
-                  <a href="#" className="hover:text-white transition">
-                    Github
-                  </a>
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition"
+                    >
+                      {social.name}
+                    </a>
+                  ))}
                 </div>
               </div>
             </motion.div>

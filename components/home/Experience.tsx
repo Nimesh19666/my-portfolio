@@ -45,7 +45,8 @@ export default function Experience() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }} // REPEATABLE
+          transition={{ duration: 0.6 }}
           className="text-5xl md:text-7xl font-bold text-center mb-32 tracking-tight"
         >
           My <span className="text-secondary">Journey</span>
@@ -67,7 +68,7 @@ export default function Experience() {
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }} // REPEATABLE
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="space-y-4 max-w-md"
                   >

@@ -1,6 +1,12 @@
+"use client";
+
 export default function Hero() {
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-background">
+    // Added ID here
+    <section
+      id="hero"
+      className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-background"
+    >
       <div className="absolute inset-0 flex items-center justify-center -z-10">
         <div className="relative w-[600px] h-[600px] animate-float opacity-80">
           <div className="absolute top-0 left-0 w-80 h-80 bg-primary rounded-full mix-blend-screen filter blur-[100px] opacity-40"></div>

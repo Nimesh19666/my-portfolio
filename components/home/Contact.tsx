@@ -14,7 +14,8 @@ export default function Contact() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }} // REPEATABLE
+            transition={{ duration: 0.8 }}
             className="text-6xl md:text-8xl font-black text-white tracking-tighter"
           >
             LETS <br />

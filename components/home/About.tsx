@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link"; // <--- ADD THIS IMPORT
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -35,6 +36,7 @@ export default function About() {
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-medium leading-tight"
           >
@@ -46,6 +48,7 @@ export default function About() {
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-text-muted font-light max-w-3xl"
           >
@@ -53,18 +56,22 @@ export default function About() {
             AI-driven products, and interactive 3D web experiences.
           </motion.p>
 
-          <motion.button
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            className="group flex items-center gap-4 px-8 py-4 bg-secondary rounded-full text-surface font-bold text-lg shadow-[0_0_20px_var(--color-secondary)]"
-          >
-            About Me
-            <span className="w-8 h-8 flex items-center justify-center bg-surface text-secondary rounded-full group-hover:rotate-45 transition-transform duration-300">
-              <ArrowUpRight size={18} />
-            </span>
-          </motion.button>
+          {/* FIX: WRAPPED BUTTON IN LINK */}
+          <Link href="/about">
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="group flex items-center gap-4 px-8 py-4 bg-secondary rounded-full text-surface font-bold text-lg shadow-[0_0_20px_var(--color-secondary)] cursor-pointer"
+            >
+              About Me
+              <span className="w-8 h-8 flex items-center justify-center bg-surface text-secondary rounded-full group-hover:rotate-45 transition-transform duration-300">
+                <ArrowUpRight size={18} />
+              </span>
+            </motion.button>
+          </Link>
         </div>
       </section>
     </div>

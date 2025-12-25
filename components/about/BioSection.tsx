@@ -51,12 +51,17 @@ export default function BioSection() {
           transition={{ duration: 0.8 }}
           className="relative aspect-[3/4] w-full rounded-sm overflow-hidden bg-surface"
         >
-          {/* Ensure you have updated next.config.ts as discussed previously for this URL */}
+          {/* IMPORTANT: 
+             1. Create a folder named 'img' inside your 'public' folder.
+             2. Rename your photo to 'new-photo.jpg' and put it there.
+          */}
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1900&auto=format&fit=crop"
-            alt="Nimesh Portrait"
+            src="/img/nimeshpfp.jpeg"
+            alt="Nimesh Gujari"
             fill
             className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
           />
 
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/20 rounded-full animate-pulse pointer-events-none" />
